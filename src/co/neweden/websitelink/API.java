@@ -37,8 +37,13 @@ public class API {
 			return null;
 		}
 		BufferedReader br = null;
+		String rawData = "";
 		try {
 			br = new BufferedReader(new InputStreamReader(url.openStream()));
+			String line = "";
+			while ((line = br.readLine()) != null) {
+				rawData = rawData + line;
+			}
 		} catch (IOException e) {
 			main.getLogger().log(Level.SEVERE, "An IO Exception has occurred when attempting to open a connection to the API or read data from the API");
 			e.printStackTrace();
@@ -46,13 +51,13 @@ public class API {
 		}
 		
 		Gson gson = new Gson();
-		Object gsonObj = gson.fromJson(br, (Type) object);
+		Object gsonObj = gson.fromJson(rawData, (Type) object);
 		InterfaceObject ifObj = (InterfaceObject) gsonObj;
 		
 		if (ifObj.errorMsg != null) {
 			main.getLogger().warning(String.format("The following error was returned from %s: %s", apiPath, ifObj.errorMsg));
 			main.getLogger().info(String.format("URL Data sent: %s", url.toString()));
-			main.getLogger().info(String.format("Raw API Response: %s", gson.toJson(object)));
+			main.getLogger().info(String.format("Raw API Response: %s", rawData));
 		}
 		
 		return Primitives.wrap(object).cast(gsonObj);

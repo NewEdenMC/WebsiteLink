@@ -2,9 +2,9 @@ package co.neweden.websitelink.jsonstorage;
 
 public class RegisterUser extends InterfaceObject {
 	
-	protected boolean userExists;
-	protected String name;
-	protected String email;
-	protected long sessionID;
+	public boolean userExists;
+	public String name;
+	public String email;
+	public long sessionID;
 	
 }
