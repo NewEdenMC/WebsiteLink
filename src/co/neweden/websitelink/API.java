@@ -10,11 +10,10 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.logging.Level;
 
-import org.bukkit.craftbukkit.libs.com.google.gson.Gson;
-
 import co.neweden.websitelink.jsonstorage.InterfaceObject;
 
 import com.google.common.primitives.Primitives;
+import com.google.gson.Gson;
 
 public class API {
 	
