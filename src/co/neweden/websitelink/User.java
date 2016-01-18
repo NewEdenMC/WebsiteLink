@@ -17,6 +17,12 @@ public class User {
 		return API.callAPIMethod("openRegistration", RegisterUser.class, args);
 	}
 	
+	public static co.neweden.websitelink.jsonstorage.User getUser(Player player) {
+		Map<String, String> args = new HashMap<String, String>();
+		args.put("uuid", player.getUniqueId().toString());
+		return API.callAPIMethod("getUser", co.neweden.websitelink.jsonstorage.User.class, args);
+	}
+	
 	public static PasswordReset resetPassword(Player player) {
 		Map<String, String> args = new HashMap<String, String>();
 		args.put("uuid", player.getUniqueId().toString());
