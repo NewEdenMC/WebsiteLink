@@ -43,8 +43,8 @@ public class UserCommands implements CommandExecutor {
 		}
 		if (apiObject.userExists == true) {
 			sender.sendMessage(Util.formatString("&cYou are already registered on the New Eden website."));
-			sender.sendMessage(Util.formatString("&bYour login email address is: &a" + apiObject.email));
-			sender.sendMessage(Util.formatString("&bYour username is: &a" + apiObject.name));
+			sender.sendMessage(Util.formatString("&bYour login email address is: &a" + apiObject.user.email));
+			sender.sendMessage(Util.formatString("&bYour username is: &a" + apiObject.user.name));
 			sender.sendMessage(Util.formatString("&bIf you have forgotten your password type /resetpassword, or you can reset it on the website."));
 			return;
 		}
@@ -79,8 +79,8 @@ public class UserCommands implements CommandExecutor {
 			sender.sendMessage(Util.formatString(""));
 			sender.sendMessage(Util.formatString("&aA password reset link has been generated and is shown below, this link will work only once!"));
 			sender.sendMessage(Util.formatString(""));
-			sender.sendMessage(Util.formatString("&bYour login email address is: &a" + apiObject.email));
-			sender.sendMessage(Util.formatString("&bYour username is: &a" + apiObject.name));
+			sender.sendMessage(Util.formatString("&bYour login email address is: &a" + apiObject.user.email));
+			sender.sendMessage(Util.formatString("&bYour username is: &a" + apiObject.user.name));
 			sender.sendMessage(Util.formatString(""));
 			sender.sendMessage(Util.formatString("&6" + apiObject.tempPasswordLink));
 			sender.sendMessage(Util.formatString(""));
