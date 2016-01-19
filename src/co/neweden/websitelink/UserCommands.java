@@ -5,8 +5,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import co.neweden.websitelink.jsonstorage.PasswordReset;
-import co.neweden.websitelink.jsonstorage.RegisterUser;
+import co.neweden.websitelink.jsonstorage.PasswordResetObject;
+import co.neweden.websitelink.jsonstorage.RegisterUserObject;
 
 public class UserCommands implements CommandExecutor {
 
@@ -35,7 +35,7 @@ public class UserCommands implements CommandExecutor {
 			return;
 		}
 		
-		RegisterUser apiObject = User.register((Player) sender, args[0]);
+		RegisterUserObject apiObject = User.register((Player) sender, args[0]);
 		
 		if (apiObject == null || apiObject.errorMsg != null) {
 			sender.sendMessage(Util.formatString("&cAn internal error occurred while attempting to perform this command, please contact a member of staff."));
@@ -64,7 +64,7 @@ public class UserCommands implements CommandExecutor {
 	}
 	
 	public void resetPasswordCommand(CommandSender sender) {
-		PasswordReset apiObject = User.resetPassword((Player) sender);
+		PasswordResetObject apiObject = User.resetPassword((Player) sender);
 		
 		if (apiObject == null || apiObject.errorMsg != null) {
 			sender.sendMessage(Util.formatString("&cAn internal error occurred while attempting to perform this command, please contact a member of staff."));

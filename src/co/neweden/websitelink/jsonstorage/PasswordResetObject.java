@@ -1,9 +1,9 @@
 package co.neweden.websitelink.jsonstorage;
 
-public class PasswordReset extends InterfaceObject {
+public class PasswordResetObject extends InterfaceObject {
 	
 	public boolean userExists;
 	public String tempPasswordLink;
-	public User user;
+	public UserObject user;
 	
 }

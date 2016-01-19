@@ -1,9 +1,9 @@
 package co.neweden.websitelink.jsonstorage;
 
-public class RegisterUser extends InterfaceObject {
+public class RegisterUserObject extends InterfaceObject {
 	
 	public boolean userExists;
 	public long sessionID;
-	public User user;
+	public UserObject user;
 	
 }
